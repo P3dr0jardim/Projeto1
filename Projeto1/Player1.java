@@ -9,10 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player1 extends Actor
 {
     private GreenfootImage player1Back, player1Front, player1DownLeft, player1DownRight, player1Left, player1Right, player1UpperLeft, player1UpperRight;
+    
+    private int reloadtime = 10,
+        magSize = 1000,
+        currentAmmo = magSize,
+        charWidth = getImage().getWidth()-25;
+        
+    private int back = 1, front = 2, downLeft = 3, downRight = 4, left = 5, right = 6, upperLeft = 7, upperRight = 8;
+    private int position, rotation, time;
     /**
      * Act - do whatever the Player1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     
     public Player1()
     {
@@ -40,7 +49,10 @@ public class Player1 extends Actor
     
     public void act() 
     {
+        time++;
         moveAround();
+        fireBullet();
+        isHitByAlien();
     }   
     
     public void moveAround()
@@ -48,34 +60,69 @@ public class Player1 extends Actor
         if(Greenfoot.isKeyDown("w")){
             setLocation(getX(),getY()-2);
             setImage(player1Back);
+            position = back;
+            rotation = 270;
         }
         if(Greenfoot.isKeyDown("s")){
             setLocation(getX(),getY()+2);
             setImage(player1Front);
+            position = front;
+            rotation = 90;
         }
         if(Greenfoot.isKeyDown("a")){
             setLocation(getX()-2,getY());
             setImage(player1Left);
+            position = left;
+            rotation = 180;
         }
         if(Greenfoot.isKeyDown("d")){
             setLocation(getX()+2,getY());
             setImage(player1Right);
+            position = right;
+            rotation = 0;
         }
         if(Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("w")){
            setLocation(getX()-2,getY()-2);
            setImage(player1UpperLeft); 
+           position = upperLeft;
+           rotation = 225;
         }
         if(Greenfoot.isKeyDown("d") && Greenfoot.isKeyDown("w")){
            setLocation(getX()+2,getY()-2);
            setImage(player1UpperRight); 
+           position = upperRight;
+           rotation = 315;
+           
         }
         if(Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("s")){
            setLocation(getX()-2,getY()+2);
            setImage(player1DownLeft); 
+           position = downLeft;
+           rotation = 135;
         }
         if(Greenfoot.isKeyDown("d") && Greenfoot.isKeyDown("s")){
            setLocation(getX()+2,getY()+2);
            setImage(player1DownRight); 
+           position = downRight;
+           rotation = 45;
+        }
+    }
+    
+    public void fireBullet(){
+        if(Greenfoot.isKeyDown("g")){
+            if(currentAmmo > 0){
+                currentAmmo--;
+                    getWorld().addObject(new Bullet(rotation), getX(), getY());
+            }
+        }
+    }
+    
+    public boolean isHitByAlien(){
+        Actor alien = getOneObjectAtOffset(0, 0, Alien.class);
+        if(alien!=null){
+            return true;
+        }else{
+            return false;
         }
     }
 }
