@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Stats
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Stats\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=size\ label
+comment1.target=Stats(int,\ java.lang.String)
+comment2.params=
+comment2.target=int\ getSize()
+comment3.params=statSize
+comment3.target=void\ setSize(int)
+comment4.params=
+comment4.target=java.lang.String\ getLabel()
+comment5.params=statLabel
+comment5.target=void\ setSize(java.lang.String)
+comment6.params=
+comment6.target=void\ act()
+numComments=7

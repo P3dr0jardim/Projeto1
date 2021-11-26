@@ -17,6 +17,8 @@ public class Player2 extends Actor
         
     private int back = 1, front = 2, downLeft = 3, downRight = 4, left = 5, right = 6, upperLeft = 7, upperRight = 8;
     private int position, rotation, time;
+    private Boolean intersectAlien=false;
+    private Boolean intersectMeteor=false;
     /**
      * Act - do whatever the Player1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -35,6 +37,8 @@ public class Player2 extends Actor
         time++;
         moveAround();
         fireBullet();
+        isHitByAlien();
+        isHitByMeteor();
         //loseGame();
     }   
     
@@ -92,12 +96,42 @@ public class Player2 extends Actor
     }
     
     public void fireBullet(){
-        if(Greenfoot.isKeyDown("g")){
+        if(Greenfoot.isKeyDown("0")){
             if(currentAmmo > 0){
                 currentAmmo--;
                     getWorld().addObject(new Bullet(rotation), getX(), getY());
             }
         }
+    }
+    
+     public void isHitByAlien(){
+                        Actor alien = getOneObjectAtOffset(0, 0, Alien.class);
+                    if(alien!=null){
+                        intersectAlien= true ;   
+                        
+                    }else{
+                        intersectAlien = false;
+                }
+                
+                
+}
+    
+       public void isHitByMeteor(){
+           Actor meteor = getOneObjectAtOffset(0, 0, Meteor.class);
+           if(meteor!=null){
+               intersectMeteor = true ;
+               getWorld().removeObject(meteor);
+           }else{
+               intersectMeteor = false;
+        }
+    }
+    
+    public boolean getIntersectingAlien(){
+        return intersectAlien;
+    }
+    
+    public boolean getIntersectingMeteor(){
+        return intersectMeteor;
     }
     
     public void loseGame(){

@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -13,9 +14,13 @@ public class HealthBar extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    int health = 50;
+    private int health;
+    private Player player;
+    public HealthBar(Player player){
+        this.player = player;
+    }
     
-    public void HealthBar(){ 
+    public HealthBar(){ 
         setImage(new GreenfootImage(52,12));
         getImage().drawRect(0,0,51,11);
         getImage().setColor(Color.RED);
@@ -24,21 +29,48 @@ public class HealthBar extends Actor
     
     public void act() 
     {
+        
+        System.out.println("Health " + health);
         setImage(new GreenfootImage(52, 12));
         getImage().drawRect(0,0,51,11);
         getImage().setColor(Color.RED);
-        getImage().fillRect(1,1,health,10);
-        World world = getWorld();
-        MyWorld myWorld = (MyWorld)world;
-        setLocation(myWorld.getPlayer1().getX(), myWorld.getPlayer1().getY() - 40);
+        getImage().fillRect(1,1,getHealth(),10);
         loseHealth();
-    }  
+        gainHealth();
+        isHealthZero();
+    }
     
     public void loseHealth(){
-        World world = getWorld();
-        MyWorld myWorld = (MyWorld)world;
-        if(myWorld.getPlayer1().isHitByAlien()){
+        if(health > 0){
+            if(player.getIntersectingAlien()){
             health--;
+            };
+            
+            if(player.getIntersectingMeteor()){
+            health = health - 25;
+            };
+        };
+    }
+    
+    public void isHealthZero(){
+        if(health == 0){
+            player.isPlayerDead(true);
+        }else{
+            player.isPlayerDead(false);
+        }
+    }
+    
+    public int getHealth(){
+        return health;
+    }
+    
+    public void setHealth(int health){
+        this.health = health;
+    }
+    
+    public void gainHealth(){
+       if(player.getIntersectingHealthSuply()){
+            health = health + 25;
         };
     }
 }

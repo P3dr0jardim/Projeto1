@@ -16,7 +16,6 @@ public class Bullet extends Actor
      */
     
     public Bullet(int rotation){
-        System.out.println("rotation"+rotation);
         setRotation(rotation);
         speed = 15;
         
