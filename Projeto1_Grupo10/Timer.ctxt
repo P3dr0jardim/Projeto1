@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Timer
+comment0.text=\r\n\ A\ classe\ score\ \u00E9\ uma\ subclasse\ da\ superclasse\ Stats\r\n
+comment1.params=size\ label
+comment1.target=Timer(int,\ java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=int\ getTime()
+comment3.text=\r\n\ Getter\ time\r\n
+comment4.params=
+comment4.target=void\ isTimeOver()
+comment4.text=\r\n\ M\u00E9todo\ para\ saber\ quando\ o\ timer\ acabou\r\n
+comment5.params=
+comment5.target=boolean\ getTimeOver()
+comment5.text=\r\n\ O\ metodo\ devolve\ se\ o\ timer\ ja\ acabou\ ou\ nao\r\n
+comment6.params=
+comment6.target=void\ timer()
+comment6.text=\r\n\ Metodo\ serve\ para\ decrementar\ o\ tempo\r\n
+numComments=7

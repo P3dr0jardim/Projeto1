@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Meteor
+comment0.text=\r\n\ Subclass\ da\ superclasse\ FallingObjects\r\n
+comment1.params=image\ type
+comment1.target=Meteor(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ animateMeteor()
+comment3.text=\r\n\ M\u00E9todo\ para\ mover\ a\ imagem\ do\ meteorito\r\n\ Deixando\ ela\ assim\ mais\ real\r\n
+comment4.params=
+comment4.target=void\ hitTheEdge()
+comment4.text=\r\n\ M\u00E9todo\ para\ explos\u00E3o\ do\ meteoro\ quando\ toca\ no\ limite\ do\ mundo\r\n\ Aqui\ foi\ feito\ override\ ao\ m\u00E9todo\ hitTheEdge\r\n
+numComments=5

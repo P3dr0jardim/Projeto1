@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=BulletsInfo
+comment0.text=\r\n\ A\ classe\ score\ \u00E9\ uma\ subclasse\ da\ superclasse\ Stats\r\n
+comment1.params=size\ label\ player
+comment1.target=BulletsInfo(int,\ java.lang.String,\ Player)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=int\ getBullets()
+comment3.text=\r\n\ getter\ bullets\r\n
+comment4.params=bullets
+comment4.target=void\ setBullets(int)
+comment4.text=\r\n\ setter\ bullets\r\n
+comment5.params=
+comment5.target=int\ decreaseBullets()
+comment5.text=\r\n\ decrementa\ as\ balas\r\n
+comment6.params=
+comment6.target=int\ increaseBullets()
+comment6.text=\r\n\ incrementa\ as\ balas\ em\ 25\ unidades\r\n
+numComments=7

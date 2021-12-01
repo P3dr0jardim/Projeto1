@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=FallingObjects
+comment0.text=\r\n\ Superclasse\r\n
+comment1.params=image\ type
+comment1.target=FallingObjects(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ movement()
+comment3.text=\r\n\ Este\ metodo\ serve\ para\ mover\ os\ \r\n\ \r\n
+comment4.params=
+comment4.target=void\ hitTheEdge()
+comment4.text=\r\n\ Este\ metodo\ serve\ para\ remover\ o\ objeto\ quando\ o\ mesmo\ tocar\ nos\ limites\ \r\n\ do\ mundo\r\n
+comment5.params=
+comment5.target=java.lang.String\ getType()
+comment5.text=\r\n\ Getter\ type\r\n
+comment6.params=
+comment6.target=int\ getSpeed()
+comment6.text=\r\n\ Getter\ speed\r\n
+numComments=7

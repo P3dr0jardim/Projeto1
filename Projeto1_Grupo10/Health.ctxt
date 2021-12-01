@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Health
+comment0.text=\r\n\ Subclasse\ da\ superclasse\ FallingObjects\r\n
+comment1.params=image\ type\ horizontalMove
+comment1.target=Health(java.lang.String,\ java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=horizontalMove
+comment3.target=void\ movement(int)
+comment3.text=\r\n\ M\u00E9todo\ para\ o\ movimento\ da\ recarga\ da\ vida\r\n\ Aqui\ foi\ feito\ overload\ ao\ m\u00E9todo\ movement,\ para\ o\ objeto\ poder\ se\ descolar\ na\ diagonal\r\n
+numComments=4
